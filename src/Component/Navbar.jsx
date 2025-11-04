@@ -1,38 +1,14 @@
-import {
-  RiFacebookBoxFill,
-  RiGoogleFill,
-  RiLinkedinFill,
-  RiTwitterFill,
-} from "react-icons/ri";
+import { RiMoonClearFill, RiMoonFill, RiSunFill } from "react-icons/ri";
 import logo from "../../public/maxy.png";
 import SocialIcon from "./Cards/SocialIcon";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShow(true);
-        console.log("Done", window.scrollY);
-      } else {
-        setShow(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const Navbar = ({ handleMode, dark }) => {
   return (
     <nav
-      className={` ${
-        show
-          ? "sticky top-0 z-50 bg-black opacity-100 shadow-lg "
-          : "bg-black  pointer-events-none"
-      } transition-all duration-500 p-4 w-[100%] text-white flex fitems-center justify-between`}
+      className={`sticky top-0 z-50 opacity-100 shadow-lg ${
+        dark ? "bg-black text-amber-50" : "bg-neutral-50 text-amber-950"
+      } transition-all duration-500 p-4 w-[100%] flex fitems-center justify-between`}
     >
       <div className="flex items-center gap-4">
         <img
@@ -45,23 +21,30 @@ const Navbar = () => {
       <div className="">
         <ul className="flex gap-4 list-none">
           <li className="cursor-pointer px-2 py-1 hover:text-amber-600 duration-300 delay-150 transition-colors">
-            Home
+            <Link to="/my-portfolio/">Home</Link>
           </li>
           <li className="cursor-pointer px-2 py-1 hover:text-amber-600 duration-300 delay-150 transition-colors">
-            About
+            <Link to="/my-portfolio/about">About</Link>
           </li>
           <li className="cursor-pointer px-2 py-1 hover:text-amber-600 duration-300 delay-150 transition-colors">
-            Contact
+            <Link to="/">Contact</Link>
           </li>
           <li className="cursor-pointer px-2 py-1 hover:text-amber-600 duration-300 delay-150 transition-colors">
-            Potfolio
+            <Link to="/">Portfolio</Link>
           </li>
         </ul>
       </div>
-      <div className="sm:block hidden">
-        {/* <ul className="flex gap-4 list-nones"> */}
+      <div className="sm:block hidden ">
         <SocialIcon />
       </div>
+
+      <button onClick={handleMode} className="cursor-pointer ">
+        {dark ? (
+          <RiSunFill className="hover:fill-amber-600" />
+        ) : (
+          <RiMoonFill className="hover:fill-amber-600" />
+        )}
+      </button>
     </nav>
   );
 };

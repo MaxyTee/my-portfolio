@@ -1,9 +1,11 @@
 import React from "react";
 import aboutImg from "../../../public/maxyHero.png";
+import Navbar from "../Navbar";
 
 const About = () => {
   return (
-    <div className="p-4 max-w-[80%] mt-7 mx-auto flex items-center justify-center gap-10">
+    <div>
+      {/* {<Navbar />} */}
       <img src={aboutImg} className="w-[30%]" alt="" />
 
       <div className="">

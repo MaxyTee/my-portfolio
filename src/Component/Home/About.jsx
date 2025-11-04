@@ -1,24 +1,38 @@
 import React from "react";
 import img from "../../../public/maxyHero.png";
 
-const About = () => {
+const About = ({ dark }) => {
   return (
-    <section className="flex flex-col sm:flex-row  px-18 py-24 gap-6 items-center justify-between bg-neutral-900">
+    <section
+      className={`flex flex-col sm:flex-row px-10 py-18 sm:px-18 sm:py-24 gap-6 items-center justify-between ${
+        dark ? "bg-black" : "bg-white"
+      }`}
+    >
       <div className="flex-1">
         <img
           src={img}
-          className="w-[70%] object-fill rounded-md border-2 border-neutral-500 overflow-hidden"
+          className={`sm:w-[70%]  object-fill rounded-md border-2 ${
+            dark ? "border-neutral-300" : "border-neutral-900"
+          } overflow-hidden`}
           alt="User Image"
         />
       </div>
-      <div className="flex-1 rounded-md shadow-lg shadow-neutral-950 bg-black w-[40%] p-4">
-        <h5 className="uppercase mb-2 leading-tight  text-amber-600/30 font-bold">
+      <div
+        className={`flex-1 rounded-md shadow-lg  ${
+          dark ? "bg-neutral-900" : "bg-neutral-300 shadow-neutral-300"
+        } w-full sm:order-none -order-1 sm:w-[40%] p-4`}
+      >
+        <h5 className="uppercase mb-2 leading-tight  text-amber-600/80 font-bold">
           About Me
         </h5>
-        <h2 className="text-amber-600 font-space sm:text-3xl mb-2 text-xl font-extrabold lg:text-5xl ">
-          I always Make The Best
+        <h2 className="text-amber-700 font-space sm:text-3xl mb-2 text-xl font-extrabold lg:text-5xl ">
+          More Than 4+ Years Programming Experienced
         </h2>
-        <p className="font-inter text-amber-100 text-sm">
+        <p
+          className={`font-inter text-justify ${
+            dark ? "text-natural-100" : "text-neutral-900"
+          } text-sm`}
+        >
           I’m a passionate Frontend Developer who loves turning ideas into
           beautiful, functional, and user-friendly web experiences. I enjoy
           working with modern technologies like HTML, CSS, JavaScript, React,

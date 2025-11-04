@@ -65,7 +65,13 @@ const works = [
 
 const WorkCard = (props) => {
   return (
-    <div className="shadow-md shadow-neutral-700 overflow-hidden nth-[odd]:bg-black  bg-neutral-800 p-3 rounded-md">
+    <div
+      className={`shadow-lg  overflow-hidden ${
+        props.dark
+          ? "bg-neutral-950 shadow-black"
+          : "bg-neutral-300 shadow-neutral-400"
+      } p-3 rounded-md`}
+    >
       <img
         src={props.imgMain}
         className="w-[100%]  h-[16rem] rounded-md 
@@ -85,10 +91,12 @@ const WorkCard = (props) => {
     </div>
   );
 };
-const Work = () => {
+const Work = ({ dark }) => {
   const [btn, setBtn] = useState(1);
 
-  const Work = works.slice().map((work, i) => <WorkCard key={i} {...work} />);
+  const Work = works
+    .slice()
+    .map((work, i) => <WorkCard dark={dark} key={i} {...work} />);
 
   const workRecent = works
     .slice()
@@ -110,10 +118,20 @@ const Work = () => {
   }
 
   return (
-    <div className="flex  flex-col items-center justify-between gap-6 bg-black py-24 px-12 md:px-12 lg:px-18">
-      <h1 className="font-space text-2xl md:text-4xl lg:text-5xl">
-        My Recent Work
+    //  text-center font-bold  flex items-center justify-between gap-2 py-4 px-2`}
+
+    <section
+      className={`${
+        dark
+          ? "bg-neutral-900 text-neutral-400"
+          : "bg-neutral-200 text-neutral-800"
+      } flex flex-col items-center justify-between gap-6 py-24 px-12 md:px-12 lg:px-18`}
+    >
+      <h1 className="font-poppins text-2xl md:text-4xl lg:text-5xl">
+        Projects
       </h1>
+      <div className="w-1 rounded-full h-9 bg-amber-700 "></div>
+      <div className="w-2 h-2 rounded-full  bg-amber-700 "></div>
       <div className="bg-amber-700 px-4 py-2 flex gap-4 rounded-full">
         <button
           onClick={() => setBtn(1)}
@@ -140,12 +158,14 @@ const Work = () => {
           Old
         </button>
       </div>
-      <div className="grid grid-cols-3 gap-6">{btnElement}</div>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+        {btnElement}
+      </div>
 
       <button className="mt-2 px-4 py-2 rounded-full bg-linear-to-b from-black  to-amber-600 hover:bg-transparent hover:inset-1 hover:border-b duration-200 delay-150 transition-all hover:inset-ring-current">
         See more
       </button>
-    </div>
+    </section>
   );
 };
 
