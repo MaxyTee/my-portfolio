@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import img1 from "../../../public/img1.png";
-import img2 from "../../../public/img2.png";
 import img3 from "../../../public/img3.png";
 import img4 from "../../../public/img4.png";
-import img5 from "../../../public/img5.jpeg";
 import img6 from "../../../public/img6.jpeg";
 import img7 from "../../../public/img7.jpeg";
 import img8 from "../../../public/img8.jpeg";
-import img9 from "../../../public/img9.jpeg";
+import Line from "../Cards/Line";
 import { RiStarFill, RiStarHalfFill } from "react-icons/ri";
 
 const works = [
@@ -70,7 +68,7 @@ const WorkCard = (props) => {
         props.dark
           ? "bg-neutral-950 shadow-black"
           : "bg-neutral-300 shadow-neutral-400"
-      } p-3 rounded-md`}
+      } p-3  rounded-md`}
     >
       <img
         src={props.imgMain}
@@ -125,13 +123,13 @@ const Work = ({ dark }) => {
         dark
           ? "bg-neutral-900 text-neutral-400"
           : "bg-neutral-200 text-neutral-800"
-      } flex flex-col items-center justify-between gap-6 py-24 px-12 md:px-12 lg:px-18`}
+      } flex flex-col px-6 py-10 sm:px-18 sm:py-24 items-center justify-between gap-6 md:px-12 lg:px-18`}
     >
       <h1 className="font-poppins text-2xl md:text-4xl lg:text-5xl">
         Projects
       </h1>
-      <div className="w-1 rounded-full h-9 bg-amber-700 "></div>
-      <div className="w-2 h-2 rounded-full  bg-amber-700 "></div>
+      <Line />
+
       <div className="bg-amber-700 px-4 py-2 flex gap-4 rounded-full">
         <button
           onClick={() => setBtn(1)}

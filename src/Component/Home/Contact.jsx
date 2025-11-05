@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import img from "../../../public/map.jpg";
+import Line from "../Cards/Line";
 
 const Contact = ({ dark }) => {
   const {
@@ -19,8 +20,7 @@ const Contact = ({ dark }) => {
       } py-24 px-12 md:px-12 lg:px-18`}
     >
       <h1 className="font-poppins text-2xl md:text-4xl lg:text-5xl">Contact</h1>
-      <div className="w-1 rounded-full h-9 bg-amber-700 "></div>
-      <div className="w-2 h-2 rounded-full  bg-amber-700 "></div>
+      <Line />
 
       <div className="flex flex-col sm:flex-row justify-between items-center">
         <form

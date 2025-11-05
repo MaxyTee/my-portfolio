@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = ({ handleMode, dark }) => {
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
   const handleClose = () => {
     console.log("Closed");
     setClose((prev) => !prev);

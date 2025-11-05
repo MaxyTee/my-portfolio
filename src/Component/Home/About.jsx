@@ -4,7 +4,7 @@ import img from "../../../public/maxyHero.png";
 const About = ({ dark }) => {
   return (
     <section
-      className={`flex flex-col sm:flex-row px-10 py-18 sm:px-18 sm:py-24 gap-6 items-center justify-between ${
+      className={`flex flex-col sm:flex-row px-6 py-10 sm:px-18 sm:py-24 gap-6 items-center justify-between ${
         dark ? "bg-black" : "bg-white"
       }`}
     >

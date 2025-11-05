@@ -3,7 +3,7 @@ import "../../App.css";
 import SocialIcon from "../Cards/SocialIcon";
 const Hero = ({ dark }) => {
   return (
-    <section className="bg-img px-12 py-8  ">
+    <section className="bg-img sm:px-12 py-8 px-8  pt-20  ">
       <div className="flex sm:flex-row flex-col justify-between mb-12 items-center text-white sm:gap-2 gap-8">
         <div className="md:w-[40%] w-full">
           <h2 className="uppercase mb-2 leading-tight  text-amber-600/60 font-bold">
