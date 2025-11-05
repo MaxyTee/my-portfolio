@@ -5,7 +5,7 @@ import Navbar from "../Navbar";
 const About = () => {
   return (
     <div>
-      {/* {<Navbar />} */}
+      {<Navbar />}
       <img src={aboutImg} className="w-[30%]" alt="" />
 
       <div className="">

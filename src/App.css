@@ -36,3 +36,11 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
+body {
+  position: relative;
+}
+
+html {
+  position: relative;
+}
